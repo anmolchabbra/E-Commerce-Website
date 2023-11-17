@@ -1,10 +1,12 @@
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
+    [EnableCors]
     [ApiController]
     [Route("api/[controller]")]
     public class ProductController : ControllerBase
@@ -14,7 +16,6 @@ namespace API.Controllers
         public ProductController(StoreContext context)
         {
             _context = context;
-            this._context = context;
         }
 
         [HttpGet]
